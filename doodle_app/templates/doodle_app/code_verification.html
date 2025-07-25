@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="authenticate-container">
+    <div class="authenticate-inner-wrapper">
+
+        <div class="form-title">
+            Enter Verification Code
+        </div>
+
+        <!-- The Sign In form -->
+        <div class="form-wrapper">
+            <form class='standard-form' action="{% url 'doodle_app:add_user' %}" method="post">
+                {% csrf_token %}
+ 
+                {#<input class="form-input" autofocus type="number" name="verification_code" placeholder="Secret Code">#}
+                {{all_forms.code_verification_form}}
+                <div class="form-submit">
+                    <input class = "form-submit-btn" type="submit" value="Confirm">
+                </div>
+            </form>
+
+            {% if form_error.verify_code_error %}
+                <div class="login-message">
+                    {{ verify_code_message  }}
+                </div>
+            {% endif %}
+        </div>
+
+
+        <div class="form-message">
+            An email containing a secret code was sent to you. Copy it into the feild above to confirm!
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,128 @@
+{% extends "doodle_app/main_layout.html" %}
+{% load static %}
+
+{% block linkicons %}
+    <link rel="shortcut icon" type="image/svg+xml" href="" />
+{% endblock %}
+
+{% block metadata %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title> Sketch Draw Doodle</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'doodle_app/css/style.css' %}?v0.001">
+{% endblock %}
+
+
+{% block nav_panel %}
+    {% include 'doodle_app/nav_panel.html' %}
+{% endblock %}
+
+
+
+
+
+{% block center_panel %}
+
+    <div class="main-panel">
+            <div class='main-logo'>
+                <img class="logo-img" src = "{% static 'doodle_app/images/css_backgrounds/logo1_w500.png' %}">
+            </div>
+
+           
+                <div class="sections-container">
+                    <section class="app-section active-section " id="home-section">
+                        {% include "doodle_app/home.html" %}
+                    </section>  
+                    <section class="app-section" id="about-section">
+                        {% include "doodle_app/about.html" %}
+                    </section> 
+                    <section class="app-section" id="frens-section">
+                        {% include "doodle_app/frens.html" %}
+                    </section> 
+
+                    <section class="app-section" id="support-section">
+                        {% include "doodle_app/support.html" %}
+                    </section> 
+
+                    <section class="app-section" id="session-config">
+                        {% include "doodle_app/session_config.html" %}
+                    </section>
+
+                    <section class="app-section" id="hashtags-section">
+                        {% include "doodle_app/hashtags.html" %}
+                    </section> 
+  
+                    <section class="app-section" id="user-section">
+                        {% include "doodle_app/user_account.html" %}
+                    </section> 
+
+                    <section class="app-section" id="profile-section">
+                        {% include "doodle_app/user_profile.html" %}
+                    </section> 
+
+                    {% if user.is_authenticated %}
+                        <section class="app-section" id="session-summary">
+                            {% include "doodle_app/session_summary.html" %}
+                        </section> 
+                    {% else %}
+                        <section class="app-section" id="signin-section">
+                            {% include "doodle_app/signin.html" %}
+                        </section> 
+                        <section class="app-section" id="join-section">
+                            {% include "doodle_app/join.html" %}
+                        </section> 
+                        <section class="app-section" id="codeverification-section">
+                            {% include "doodle_app/code_verification.html" %}
+                        </section>
+                        <section class="app-section" id="resetpass-section">
+                            {% include "doodle_app/reset_password.html" %}
+                        </section>
+
+                    {% endif %}
+ 
+
+ 
+
+  
+
+ 
+ 
+
+
+               </div> {# sections-container #}
+    </div> {# main-panel #}
+            
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block extras_panel%}
+    {% include 'doodle_app/extras_panel.html' %}
+{% endblock %}
+
+
+
+{% block script %} 
+
+    <script src="{% static 'doodle_app/javascript/index.js' %}"></script>
+
+    <!-- Import GSAP Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- Send csrf_token in case you need to explicitly add to form headers -->
+    <script type="text/javascript">
+        window.csrfToken = "{{ csrf_token }}";
+    </script> 
+
+{% endblock %}
+

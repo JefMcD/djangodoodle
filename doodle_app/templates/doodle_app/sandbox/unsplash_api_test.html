@@ -1,0 +1,55 @@
+{% extends "sddoodle_app/main_layout.html" %}
+{% load static %}
+
+{% block linkicons %}
+<!-- 
+<link rel="shortcut icon" type="image/svg+xml" href="{% static 'sddoodle_app/react_frontend/jeffers.svg' %}?v0.001" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'sddoodle_app/react_frontend/vite.svg' %}?v0.001" />
+-->
+{% endblock %}
+
+
+{% block title %}
+    sddoodle Unsplash API test
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'sddoodle_app/css/fonts.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'sddoodle_app/css/style.css' %}?v0.001"> 
+
+{% endblock %}
+
+
+{% block sddoodle_app %}
+
+        <!-- The html for the API test-->
+    <div class="main-window-wrapper">
+        main window
+        <!-- Button that calls the Unsplash API fetch-->
+        <div id='unsplash-api-get-btn'>
+            GET
+        </div>
+        <!-- Div that displays the image that is returned by Unsplash -->
+        <div class="unsplash-pic">
+
+        </div>
+    <div>
+
+{% endblock%}
+
+
+{% block script %}
+
+
+    <script src="{% static 'sddoodle_app/javascript/unsplash_api_test.js' %}"></script>
+
+    <!-- Import GSAP Libraries -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    -->
+    <!-- Send csrf_token for React to add to form headers -->
+    <!--<script type="text/javascript">
+        window.csrfToken = "{{ csrf_token }}";
+    </script>
+    --> 
+{% endblock %}

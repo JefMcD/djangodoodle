@@ -1,0 +1,336 @@
+
+@use 'doodle_theme';
+@use 'fonts';
+
+//-------------------------------
+// Nav panel vertical tabs
+//-------------------------------
+
+
+  .vertical-tabs-box{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    width: 100%; 
+    height: 40vh;
+    margin-top: 1rem;
+    padding:0rem; 
+    //border: 2px solid red;
+  }
+
+    .vtab{
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      z-index: 1;
+      overflow: hidden;
+
+      width: calc(100% - 0.5rem);
+      max-width: 3rem;
+      height: 12vh;
+      
+      margin-left: 0.5rem;
+      margin-top: 0.2rem;
+      padding: 0.3rem;
+      inset: 0 1px; // offest to cover right border
+
+      border-left: 1px solid doodle_theme.$red-003;
+      border-top: 1px solid doodle_theme.$red-003;
+      border-bottom: 1px solid doodle_theme.$red-003;
+      border-top-left-radius: 50%; // dektop change media query
+      border-bottom-left-radius: 0.5rem;
+      background-color: transparent;
+
+    
+
+
+      // attach the background image to the parent
+      .vtab-img-container{
+        display:none;
+        //display:block; // desktop
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding:0rem;
+        width:100%;
+        height: 100%;
+        // border: 5px solid doodle_theme.$dk-004;
+        //background-color: aquamarine;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit:cover;
+        }
+        z-index: 0;
+
+      }
+
+      // Optional: Overlay for contrast
+      &::before { // creates a before psuedo element on tab element
+        content: '';
+        display: none;
+        // display: block; // desktop
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); // Semi-transparent overlay
+        z-index: 1;
+
+        transition-property: opacity;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in-out;
+      }
+
+      // Remove htab overlay on hover, focus, or when active
+      &:hover::before,
+      &:focus::before,
+      &.active-tab::before {
+        opacity: 0;
+      }
+
+    } // end tab
+
+
+
+
+
+    .vtab-icon-svg{
+      width: 3.5vh;
+      height: 3.5vh;
+      //border: 5px solid blue;
+      path{
+        fill:doodle_theme.$dk-002;
+        stroke-width:0.03;
+
+        transition-property: fill, stroke, stroke-width;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in-out;       
+      }
+
+      z-index: 1;
+
+    }
+    .vtab:not(.active-tab) .vtab-icon-svg:hover,
+    .vtab:not(.active-tab) .vtab-icon-svg:focus {
+      path {
+        fill: doodle_theme.$red-003;
+        stroke: doodle_theme.$dk-003;
+        stroke-width: 0.05;
+      }
+    }
+
+
+
+    .vtab-label-container{
+      //display: none;
+      display: flex; // desktop & mobile
+      position: absolute;
+      bottom:0;
+      right:0;
+
+      width: 100%;
+      height: 2.5rem;
+
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 0.2rem;
+      z-index: 1;
+      //border: 2px solid green;
+
+      transition-property: color;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
+
+      .tab-label{
+        color: doodle_theme.$lt-002;
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+  
+    }
+    .vtab-label-container:hover,
+    .vtab-label-container:focus{
+    .vtab-label{
+        color: doodle_theme.$purple-002;
+      }
+    }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------
+// Drawing Session Config Tabs
+//--------------------------------
+
+.horizontal-tabs-box{
+  display: flex;
+  justify-content: flex-start;
+  width: calc(100% - 1rem); 
+  height: 3rem;
+  margin-left: 0.5rem;
+  //border: 2px solid green;
+}
+
+.htab{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  z-index: 1;
+  overflow: hidden;
+
+  width: 6rem;
+  height: 3rem;
+  
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+
+  border-left: 1px solid doodle_theme.$red-003;
+  border-top: 1px solid doodle_theme.$red-003;
+  border-right: 1px solid doodle_theme.$red-003;
+  border-top-left-radius: 0.5rem; // dektop change media query
+  border-top-right-radius: 50%;
+  background-color: doodle_theme.$lt-002;
+  //border: 5px solid blue;
+
+  // attach the background image to the parent
+  .htab-img-container{
+    display:block; // desktop & mobile
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:0rem;
+    width:100%;
+    height: 100%;
+    // border: 5px solid doodle_theme.$dk-004;
+    //background-color: aquamarine;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+    }
+    z-index: 0;
+
+  }
+
+  // dark Overlay for contrast when tab not selected
+  &::before { // creates a before psuedo element on htab element
+    content: '';
+    display: block; // desktop & mobile
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); // Semi-transparent overlay
+    z-index: 1;
+
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  // Remove htab overlay on hover, focus, or when active
+  &:hover::before,
+  &:focus::before,
+  &.active-tab::before {
+    opacity: 0;
+  }
+
+} // end htab 
+
+
+
+.htab-icon-svg{
+  width: 3.5vh;
+  height: 3.5vh;
+  //border: 5px solid blue;
+  path{
+    fill:doodle_theme.$dk-002;
+    stroke-width:0.03;
+
+    transition-property: fill, stroke, stroke-width;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;       
+  }
+
+  z-index: 1;
+
+}
+.htab:not(.active-tab) .htab-icon-svg:hover,
+.htab:not(.active-tab) .htab-icon-svg:focus {
+  path {
+    fill: doodle_theme.$red-003;
+    stroke: doodle_theme.$dk-003;
+    stroke-width: 0.05;
+  }
+}
+
+
+
+.htab-label-container{
+  //display: none;
+  display: flex; // desktop & mobile
+  position: absolute;
+
+  width: 100%;
+  height: 2.5rem;
+
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-right: 0rem;
+  z-index: 1;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  .htab-label{
+    color: doodle_theme.$lt-002;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+}
+.htab-label-container:hover,
+.htab-label-container:focus,
+.htab.active-tab{
+  .htab-label{
+    color: doodle_theme.$purple-002;
+  }
+}
+
+
+
+
+.active-tab{
+  background-color: doodle_theme.$purple-001;
+
+}
+.htab.active-tab path{
+  fill: doodle_theme.$lt-001;
+}
+
+   
+
+  
+
+
+

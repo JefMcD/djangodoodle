@@ -1,0 +1,180 @@
+
+
+@use 'sddoodle_theme';
+@use 'fonts';
+
+
+
+/*********************************************************
+***
+***  General Styles and default settings for App
+***
+*********************************************************/
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  width: 100%;
+
+  font-family: fonts.$writing;
+  font-weight: 400;
+  font-size: 2rem;
+  //line-height: 2.5;
+
+  color: sddoodle_theme.$dk-001;
+  background-color:sddoodle_theme.$dk-003;
+  // border: 2px solid sddoodle_theme.$grey-002;
+}
+div {
+  padding: 0;
+  margin: 0;
+  height:auto;
+  width: auto;
+}
+
+h1,
+h2,
+h3{
+  font-family: fonts.$header;
+  font-weight: 900;
+  line-height: 1;
+
+  margin-bottom: 1rem;
+}
+
+h2,
+h3
+p {
+  margin-bottom: 1rem;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: sddoodle_theme.$purple-001;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+
+}
+a:hover,
+a:focus,
+a:target{
+    color: sddoodle_theme.$turq-001;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+/* Utility Classes */
+.bg-light{
+  color: sddoodle_theme.$dk-001;
+  background-color: sddoodle_theme.$lt-001;
+}
+
+.bg-middle{
+  color: sddoodle_theme.$lt-002;
+  background-color: sddoodle_theme.$dk-001;
+}
+
+.bg-dark{
+  color: sddoodle_theme.$lt-003;
+  background-color: sddoodle_theme.$dk-003;
+}
+
+.bg-accent{
+  color: sddoodle_theme.$lt-001;
+  background-color: sddoodle_theme.$dk-004;
+}
+
+
+
+
+/* Scrollbars */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: sddoodle_theme.$dk-001 sddoodle_theme.$lt-001;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background:sddoodle_theme.$lt-001;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: sddoodle_theme.$dk-001;
+    border-radius: 20px;
+    border: 3px solid sddoodle_theme.$lt-001;
+  }
+  /* end scrollbars */
+  
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+section {
+  font: inherit;
+}
+
+fieldset{
+  //over-ride Django/Bootstrap styles in forms
+  border: 0;
+  border-radius: 0;
+}
+
+// Get rid of the input number spinners
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;;
+  margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  cursor:pointer;
+  display:block;
+  width:8px;
+  color: #333;
+  text-align:center;
+  position:relative;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+

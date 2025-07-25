@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="authenticate-container">
+    <div class="authenticate-inner-wrapper">
+
+
+        <div class="form-title">
+            Sign In
+        </div>
+
+        <!-- The Sign In form -->
+        <div class="form-wrapper">
+            <form class='standard-form' action="{% url 'doodle_app:signin' %}" method="post">
+                {% csrf_token %}
+                {% comment %}
+                <input class="form-input" autofocus type="text" name="username" placeholder="Username">
+                <input class="form-input" type="password" name="password" placeholder="Password">
+                {% endcomment %}
+                {# {{ all_forms.signin_form }} #}
+                {{all_forms.signin_form.username}}
+                {{all_forms.signin_form.password}}
+
+                <div class="form-submit">
+                    <input class = "form-submit-btn" type="submit" value="Sign Me In!">
+                </div>
+            </form>
+
+            {%if form_error.signin_error %}
+                <div class="form-title form-message">
+                    {{form_error.signin_error}}
+                </div>
+            {% endif %}
+
+        </div>
+
+        <div class="authenticate-redirect">
+            {# Not a member? <a href="{% url 'doodle_app:join' %}">Join</a> #}
+            Not a member? <span class="auth-link" id="auth-join-link" data-section="join-section">Join!</span>
+
+        </div>
+        <div class="authenticate-redirect">
+            {# Forgot Password? <a href="{% url 'doodle_app:reset_password' %}">Reset Password</a> #}
+            Forgot Password? <span class="auth-link" id="reset-pass-link" data-section="resetpass-section">Reset Password</span>
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+@use 'doodle_theme';
+@use 'fonts';
+
+
+.session-box{
+    position: relative;
+    display: block;
+
+    width: calc(100% - 1rem);
+    height: calc(100vh - 20vh);
+    overflow: auto;
+
+    border: 2px solid doodle_theme.$purple-001;
+    //background-color: yellow;
+    border-radius: 0.5rem;
+}
+
+.drawing-session-config{
+  display: none;
+  //display: block;
+  //border: 2px solid green;
+}
+.active-config-section{
+  display:block;
+}
+
+// A short note explaining the category or subcategory
+.notes-box{
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 2px solid doodle_theme.$purple-001;
+    border-radius: 0.3rem;
+
+}
+
+// used to hide elemnt for testing
+.hide{
+  display:none;
+  //border: 2px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

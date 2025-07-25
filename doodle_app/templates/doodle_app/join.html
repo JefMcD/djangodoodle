@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="authenticate-container">
+    <div class="authenticate-inner-wrapper">
+
+
+        <div class="form-title">
+            Join
+        </div>
+
+        <!-- The Join form -->
+        <div class="form-wrapper join-form">
+            <form class='standard-form join-form' action="{% url 'doodle_app:join' %}" method="post">
+                {% csrf_token %}
+                {% comment%}
+                <input class="form-input" autofocus type="text" name="username" placeholder="Username">
+                <input class="form-input" type="email" name="email" placeholder="Email Address">
+                <input class="form-input" type="password" name="password" placeholder="Password">
+                <input class="form-input" type="password" name="confirmation" placeholder="Confirm Password">
+                {% endcomment %}
+                {# {{ all_forms.join_form}} The whole form as a sinle unit #}
+
+                {# listing the inputs individually over-rides djangos default error messages #}
+                {# and allows for you to handle them and style them better #}
+                {{ all_forms.join_form.firstname }}
+                {{ all_forms.join_form.lastname }}
+                {{ all_forms.join_form.username }}
+                {{ all_forms.join_form.email }}
+                {{ all_forms.join_form.password }}
+                {{ all_forms.join_form.confirm }}
+               
+                {%if form_error.join_error %}
+                    <div class="form-title form-message">
+                        {{form_error.join_error}}
+                    </div>
+                {% endif %}
+                <div class="form-submit">
+                    <input class = "form-submit-btn" type="submit" value="Join Up!">
+                </div>
+            </form>
+
+
+        </div>
+
+        <div class="authenticate-redirect">
+            {# Already a member? <a href="{% url 'doodle_app:signin' %}">Sign In.</a> #}
+            Already a Member? <span class="auth-link" id="auth-signin-link" data-section="signin-section">Sign-In</span>
+
+        </div>
+
+    </div>
+</div>

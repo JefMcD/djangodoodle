@@ -1,0 +1,158 @@
+@use 'doodle_theme';
+@use 'fonts';
+
+.main-panel{
+  display: block;
+  position: relative;
+
+  background-image: url("../images/css_backgrounds/main_panel_900x1024.webp");
+  width: 100%;
+  max-width: 80rem;
+  min-height: 100vh;
+  overflow: auto;
+  // border: 2px solid green;
+
+    // Main Logo Doodle Sketch Draw
+    .main-logo{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+        top: 0;
+        left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        height: 5vh;
+
+        // font-size: 1rem;
+        //border: 2px solid green;
+
+        .logo-img{
+        max-width: 100%;
+        max-height: 100%;
+        object-fit:cover;
+        }
+    }
+
+
+
+
+    // Picture of Rory racoon Slingin Ink
+    .welcome-hero{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;;
+
+        width: 100%;
+        height: 30vh;
+
+
+        //border: 2px solid purple;
+        //background-color: darkgreen;
+
+        .hero-img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .splat-container{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 10vh;
+
+
+        //border: 2px solid rgb(16, 167, 23);
+        //background-color: rgb(219, 190, 58);
+
+
+        #splat1-svg-path{
+            fill:doodle_theme.$turq-002;
+            stroke-width:0.03;
+
+            transition-property: fill;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out;
+        }
+        #splat1-svg-path:hover,
+        #splat1-svg-path:focus,
+        #splat1-vsg-path:target{
+            fill:doodle_theme.$purple-002;
+        }
+    }
+}
+
+
+.ink-splat-svg{
+    width: 7vh;
+    height: 7vh;
+    //border: 2px solid red;
+
+}
+
+
+
+
+// ------------------------------
+// Sections
+// ------------------------------
+
+
+.app-section{
+    display: none;
+}
+
+#user-section{
+    
+}
+
+#home-section{
+}
+
+#login-section{
+
+}
+
+#join-section{
+
+}
+
+#about-section{
+
+}
+
+#contact-section{
+
+}
+
+#session-pics{
+
+}
+
+#session-time{
+
+}
+
+#sessions-music{
+
+}
+
+#hashtags-section{
+
+}
+
+#session-summary{
+    
+}
+
+.active-section{
+    display:block;
+}

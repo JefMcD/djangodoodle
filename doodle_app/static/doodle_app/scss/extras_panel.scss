@@ -1,0 +1,106 @@
+@use 'doodle_theme';
+@use 'fonts';
+
+.extras-container{
+  display: none;
+  // display: flex; // set in @media query when display above mobile size
+  position: relative;
+  flex-direction: column;
+  background-image: url("../images/css_backgrounds/side_panel_250x1024.jpg");
+  width: 20%;
+  height: 100vh;
+  border-left: 1px solid doodle_theme.$dk-004;
+
+  .extras-container{
+    display: block;
+    position:relative;
+    width:auto;
+    height: 11rem;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+
+    border: 1px solid doodle_theme.$dk-004;
+    border-radius: 1vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .join-container{
+    display: block;
+    position:relative;
+    width:auto;
+    height: 3.5rem;
+    margin: 1rem;
+    padding: 0;
+
+    border: 1px solid doodle_theme.$dk-004;
+    border-radius: 1vw;
+
+    .join-text{
+      display: flex;
+      position: relative;
+      justify-content: center;
+      
+      font-family: fonts.$writing;
+      font-size:2.5rem;
+      font-weight: 700;
+
+      color: doodle_theme.$red-003;
+      line-height: 3.5rem;
+
+      transition-property: color;
+      transition-duration: 250ms;
+      transition-timing-function: ease-in-out;
+    }
+    .join-text:hover{
+      color: doodle_theme.$purple-001;
+    }
+  }
+
+  .hashtags-container{
+
+  }
+
+  .session-summary-container{
+    display: block;
+    position:relative;
+    flex-grow: 1;
+
+  }
+
+
+}
+
+
+
+.info{
+  font-family: fonts.$writing;
+  font-size: 1.5rem;
+  color: doodle_theme.$dk-004;
+  line-height: 1.5rem;
+
+}
+.info-title{
+  font-size: 2rem;
+  color: doodle_theme.$purple-003;
+  line-height: 2rem;
+}
+.info-shout{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom:0.5rem;
+  color: doodle_theme.$red-003;
+  line-height: 2rem;
+}
+.indent{
+    padding-left: 1rem;
+}
+
+.tutorials-container{
+
+
+}
+
+.spotlight-container{
+
+}

@@ -1,0 +1,62 @@
+
+@use 'doodle_theme';
+@use 'fonts';
+
+
+
+.authenticate-container{
+    position: relative;
+    display: block;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    background-color:doodle_theme.$lt-002;
+    border: 2px solid doodle_theme.$purple-003;
+
+    .authenticate-inner-wrapper{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: calc(100% - 2rem);
+        height: 100%;
+
+
+        // border: 2px solid doodle_theme.$dk-002;
+
+        border-radius: 0.5rem;
+
+        padding-bottom: 1rem;
+        margin: 1rem;
+        
+    }
+
+
+
+    .authenticate-redirect{
+        position: relative;
+        display:block;
+        text-align: center;
+        padding: 0.5rem;
+        color: doodle_theme.$dk-003;
+        font-size: 16pt;
+        font-family: fonts.$writing;
+        //border: 2px solid green
+
+    }
+
+}
+
+.auth-link{
+    color: doodle_theme.$purple-001;
+    cursor: pointer;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+}
+.auth-link:hover,
+.auth-link:focus{
+    color:doodle_theme.$turq_001;
+}

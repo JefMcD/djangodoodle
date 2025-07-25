@@ -1,0 +1,193 @@
+@use 'doodle_theme';
+@use 'fonts';
+
+
+
+
+
+
+
+/*
+Standard Breakpoints for Devices List
+
+    Extra Small Devices (Mobile Portrait)
+        320px to 480px
+        Used for the smallest smartphones.
+
+    Small Devices (Mobile Landscape and Larger Phones)
+        481px to 767px
+        Landscape mode for phones and small tablets.
+
+    Medium Devices (Tablets)
+        768px to 1024px
+        Includes tablets in both portrait and landscape orientation.
+
+    Large Devices (Desktops and Laptops)
+        1025px to 1440px
+        Used for laptops and smaller desktop monitors.
+
+    Extra Large Devices (Large Desktops)
+        1441px and up
+        For large desktop screens, TV's and 4K displays.
+
+*/
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+    /* Styles for phones */
+    /* Default Mobile First */ 
+  }
+  
+/* Small devices (landscape phones and tablets, 481px and up) */
+@media (min-width: 481px) and (max-width: 767px) {
+    /* Styles for landscape phones and small tablets */
+        /* Default Mobile First */ 
+}
+  
+
+
+
+
+/* All devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Styles for tablets */
+    .extras-container{
+      display: flex;
+    }
+    .nav-menu-container{
+      width: 20%;
+    }
+    .user-container{
+      height: 20vh;
+      .user-name{
+          display:flex; 
+      }
+    }
+
+    .nav-icons-container{
+      padding: 0.5rem;
+      //border: 2px solid green;
+      .nav-item{
+        .nav-icon-label{
+          display: block; 
+          flex-grow: 1; 
+          padding-right: 1vw;
+        }
+      }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Medium devices (tablets, 768px and up to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+  
+/* Large devices (laptops/desktops, 1025px and up) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Styles for laptops and desktops */
+
+  
+}
+
+/* Extra large devices (large desktops, 1441px and up) */
+@media (min-width: 1441px) {
+    /* Styles for large desktops */
+
+}
+
+/* For Specific outlier cases that dont fit into the above */
+  /* Portrait mode */
+@media (orientation: portrait) {
+    /* Styles for portrait mode */
+  }
+  
+/* Landscape mode */
+@media (orientation: landscape) {
+  /* Styles for landscape mode */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Landscape Orientation Breakpoints
+
+    Small Mobile (landscape):
+        480px to 767px
+        Example: iPhone in landscape orientation.
+
+    Medium Devices (landscape tablets):
+        768px to 1024px
+        Example: iPad and small tablets in landscape.
+
+    Large Tablets / Small Laptops (landscape):
+        1025px to 1280px
+        Example: Larger tablets and small laptops in landscape mode.
+
+    Laptops & Desktops (landscape):
+        1281px to 1440px
+        Example: Standard laptops or monitors in landscape.
+
+    Large Desktops (landscape):
+        1441px and up
+        Example: Large desktop screens and ultra-wide monitors in landscape.
+*/
+
+/* Small Mobile Landscape (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+    /* Styles for small mobile devices in landscape */
+  }
+  
+  /* Medium Devices Landscape (768px to 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Styles for medium tablets in landscape */
+  }
+  
+  /* Large Tablets / Small Laptops Landscape (1025px to 1280px) */
+  @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    /* Styles for large tablets or small laptops in landscape */
+  }
+  
+  /* Laptops and Desktops Landscape (1281px to 1440px) */
+  @media (min-width: 1281px) and (max-width: 1440px) and (orientation: landscape) {
+    /* Styles for laptops and desktops in landscape */
+  }
+  
+  /* Large Desktops Landscape (1441px and up) */
+  @media (min-width: 1441px) and (orientation: landscape) {
+    /* Styles for large desktops in landscape */
+  }
+

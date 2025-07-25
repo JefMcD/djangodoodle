@@ -1,0 +1,255 @@
+@use 'doodle_theme';
+@use 'fonts';
+
+
+// This is used to give a heading to the input section, for pics time and music
+.form-title{
+    position: relative;
+    display: block;
+    width:100%;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+
+    color: doodle_theme.$dk-003;
+    font-size: 1.5rem;
+    font-family: fonts.$header;
+    text-align: left;
+    padding-left:0.5rem;
+
+    //border: 2px solid doodle_theme.$dk-001;
+    //background-color: purple;
+
+}
+
+// A div to hold the form
+.form-wrapper{
+    position: relative;
+    display: block;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    color: doodle_theme.$black-001;
+    //border: 2px solid red;
+    //background-color: yellow;
+
+}
+.standard-form{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    padding: 0;
+
+    color: doodle_theme.$black-001;
+
+
+    //border: 2px solid doodle_theme.$dk-002;
+    //background-color: blue;
+}
+
+.session-config-form{
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 21vh);
+    overflow: auto;
+
+}
+
+
+.form-inputs-box{
+    position: relative;
+    display: block;
+
+    width: calc(100% - 1rem);
+    height: 100%;
+
+
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding:0.5rem;
+
+    border: 2px solid doodle_theme.$turq-001;
+    border-radius: 0.5rem;
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30rem;
+    height: 3rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+
+    //border: 2px solid doodle_theme.$red-002;
+}
+
+
+
+
+
+.form-submit{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 30rem;
+    //border: 2px solid doodle_theme.$turq-002;
+
+    .form-submit-btn{
+        position: relative;
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        margin-left: auto;
+
+        width:7rem;
+        height: 2.5rem;
+        //margin-bottom: 1rem;
+        font-family: fonts.$writing;
+        font-size: 2rem;
+        line-height: 2rem;
+
+        border-radius: 0.5rem;
+        border: 2px solid doodle_theme.$dk-001;
+
+        cursor: pointer;
+        color: doodle_theme.$dk-004;
+        background-color: doodle_theme.$lt-001;
+
+
+        transition-property: background-color, color;
+        transition-duration: 350ms;
+        transition-timing-function: ease-in-out;
+    }
+    .form-btn:hover,
+    .form-btn:focus,
+    .form-btn:target{
+        background-color: doodle_theme.$white-001;
+        color: doodle_theme.$red-002;
+    }
+
+}
+
+
+
+// submit button for drawing session config
+// fixed position relative to the viewport
+.config-submit{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1rem; // adjust positon for desktop
+    right: 1rem;
+    z-index:5;
+
+    width: 7rem;
+    height: 7rem;
+
+    //border: 2px solid red;
+    //background-color: purple;
+    // Optional: Remove border/background if SVG provides it
+    //border: none; // Remove border to let SVG shine
+    background-color: transparent; // Transparent to show SVG
+    
+}
+
+.inksplat-submit{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: none; // No background; SVG provides the visual
+    border: none; // No border; SVG provides the shape
+    cursor: pointer;
+    overflow: visible; // Ensure SVG isn’t clipped if it extends slightly
+
+    .ink-splat {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        fill: doodle_theme.$turq-002; // Default ink splat color
+        transition-property: fill, opacity, transform;
+        transition-duration: 350ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .btn-text {
+        position: relative;
+        z-index: 1; // Ensure text is above SVG
+        font-family: fonts.$writing;
+        font-size: 3rem;
+        font-weight: bold;
+        color: doodle_theme.$white-001; // White for contrast
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Improve readability
+        transition-property: color, transform;
+        transition-duration: 350ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    &:hover,
+    &:focus,
+    &.pulse{
+        .ink-splat {
+        fill: doodle_theme.$purple-002; // Change SVG color on hover/focus
+        opacity: 0.9; // Slight fade for feedback
+        transform: scale(1.1); // Zoom effect for excitement
+        }
+        .btn-text {
+        color: doodle_theme.$lt-001; // Lighter text color on hover
+        transform: scale(1.1); // Match SVG zoom
+        }
+    }
+}
+
+// Keyframe animation for pulse effect
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Apply animation when .pulse is active
+.inksplat-submit.pulse {
+  .ink-splat {
+    animation: pulse-animation 700ms ease-in-out; // 700ms for full cycle (zoom in and out)
+  }
+  .btn-text {
+    animation: pulse-animation 700ms ease-in-out;
+  }
+}
+
+
+.form-message{
+    color: doodle_theme.$red-001;
+    font-size: 1.8rem;
+    font-family: fonts.$writing;
+    text-align: center;
+
+    //background-color:doodle_theme.$lt-002;
+    //border: 2px solid green
+}   
+
+.join-form{
+    height:60vh;
+}

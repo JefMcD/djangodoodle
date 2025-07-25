@@ -1,0 +1,156 @@
+
+@use 'doodle_theme';
+@use 'fonts';
+
+
+// React Root div 
+#root{
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  //background-color:doodle_theme.$turq-002;
+  //border: 20px solid doodle_theme.$purple-002;
+
+  //background-repeat: repeat-x;
+  //background-position: left bottom;
+}
+
+
+/////////////////////////////////////////////////////////
+/// 
+/// Main Window Structure and General Layout
+/// 
+/// /////////////////////////////////////////////////////
+
+.app-container{
+    display: flex;
+    position:relative;
+    flex-direction: row;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    max-width: 80rem;
+
+    //background-color:doodle_theme.$purple-001;
+    //border: 5px solid red;
+
+    overflow: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////  Rubbish ///////////////////////////////////////
+
+#unsplash-api-get-btn{
+  position: relative;
+  display: block;
+
+  width: 5rem;
+  height: 3rem;
+
+  background-color:doodle_theme.$red-001;
+  border: 2px solid doodle_theme.$accent-001;
+
+  cursor: pointer;
+}
+
+// The section wrapper takes up the entire viewport including the navbar which floats on top.
+// This is necessary so that the internal container can have an offset, so that things at the top dont get hidden
+// under the meny when a link is clicked to load a section
+.section-wrapper{
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100%;
+
+  z-index: 0;
+
+  //border: 2px solid blue;
+}
+.section-content{
+  position: relative;
+  display: block;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  padding: 1rem;
+
+  z-index: 0;
+
+  //background-color:doodle_theme.$lt-003;
+  //border: 2px solid red;
+}
+
+.section-header{
+  position: relative;
+  display: block;
+
+  top:0;
+  left: 0;
+
+  height: 2rem;
+  width: 100%;
+
+  z-index: 1;
+
+}
+
+// class intended for a paragraph of text and an image
+.section-info{
+  position: relative;
+  display: flex;
+
+  flex-direction:row;
+  gap: 2rem;
+
+}
+
+.section-info > *{
+  flex-basis: 100%;
+}
+
+.next-page-arrow{
+  position: absolute;
+  display: block;
+
+  bottom: 0.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  //background-color:doodle_theme.$lt-003;
+  //border: 2px solid red;
+
+}
+
+
+.arrow-animation{
+  animation: arrow-fade ;
+  animation-duration: 1000ms;
+}
+
+.icon{
+  position: relative;
+  display: block;
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+

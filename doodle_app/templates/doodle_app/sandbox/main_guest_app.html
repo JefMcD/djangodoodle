@@ -1,0 +1,133 @@
+
+{% extends "sddoodle_app/main_layout.html" %}
+{% load static %}
+
+{% block linkicons %}
+<!-- 
+<link rel="shortcut icon" type="image/svg+xml" href="{% static 'sddoodle_app/react_frontend/jeffers.svg' %}?v0.001" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'sddoodle_app/react_frontend/vite.svg' %}?v0.001" />
+-->
+    <link rel="shortcut icon" type="image/svg+xml" href="" />
+    
+{% endblock %}
+
+{% block title %}
+    Sketch Draw Doodle
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'sddoodle_app/css/style.css' %}?v0.001">
+
+{% endblock %}
+
+
+{% block sddoodle_app %}
+    <div class="app-container"> 
+
+        <div class="nav-menu-container">
+            <!-- It would be better to optionally have a nav depending on screen size One for desktop and one for mobile -->
+            {% include 'sddoodle_app/nav_panel.html' %}
+        </div>
+
+        <div class="main-panel">
+
+
+            <div class='main-logo'>
+                <img class="logo-img" src = "{% static 'sddoodle_app/images/css_backgrounds/logo1_w500.png' %}">
+            </div>
+
+            <div class="sections-container">
+                <section class="app-section active-section" id="home-section">
+                    {% include "sddoodle_app/home.html" %}
+                </section>  
+
+                <section class="app-section" id="user-section">
+                    {% include "sddoodle_app/user_account.html" %}
+                </section> 
+
+                <section class="app-section" id="signin-section">
+                    {% include "sddoodle_app/signin.html" %}
+                </section> 
+
+                <section class="app-section" id="join-section">
+                    {% include "sddoodle_app/join.html" %}
+                </section> 
+
+                <section class="app-section" id="resetpass-section">
+                    {% include "sddoodle_app/reset_password.html" %}
+                </section> 
+
+                <section class="app-section" id="about-section">
+                    {% include "sddoodle_app/about.html" %}
+                </section> 
+                <section class="app-section" id="frens-section">
+                    {% include "sddoodle_app/frens.html" %}
+                </section> 
+
+                <section class="app-section" id="support-section">
+                    {% include "sddoodle_app/support.html" %}
+                </section> 
+
+
+                <div class="form-wrapper hide">
+                    <form class="standard-form">
+
+                        <section class="app-section" id="session-pics">
+                            {% include "sddoodle_app/session_pics.html" %}
+                        </section> 
+                        
+                        <section class="app-section" id="session-time">
+                            {% include "sddoodle_app/session_time.html" %}
+                        </section> 
+
+                        <section class="app-section" id="session-music">
+                            {% include "sddoodle_app/session_music.html" %}
+                        </section> 
+
+                    <div class="form-submit hide">
+                        <input class = "form-submit-btn hide" type="submit" value="Submit">
+                    </div>
+            
+                    </form>
+                </div>
+
+                <section class="app-section" id="hashtags-section">
+                    {% include "sddoodle_app/hashtags.html" %}
+                </section> 
+
+                <section class="app-section" id="session-summary">
+                    {% include "sddoodle_app/session_summary.html" %}
+                </section> 
+
+            </div>
+            
+
+        </div>
+
+
+
+
+        
+        <div class = "extras-container">
+            {% include 'sddoodle_app/extras_panel.html' %}
+        </div>
+    </div>
+{% endblock%}
+
+
+{% block script %}
+
+
+    <script src="{% static 'sddoodle_app/javascript/index.js' %}"></script>
+
+    <!-- Import GSAP Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- Send csrf_token for React to add to form headers -->
+    <script type="text/javascript">
+        window.csrfToken = "{{ csrf_token }}";
+    </script> 
+
+
+{% endblock %}

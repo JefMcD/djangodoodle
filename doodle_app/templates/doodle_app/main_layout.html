@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block linkicons %}
+    {% endblock %}
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    {% block metadata %}
+    {% endblock %}
+
+    {% block css %}
+    {% endblock %}
+    
+</head>
+<body id="state-data" data-section="{{active_section}}">
+    <div class = "app-container">
+        {% block nav_panel %}
+        {% endblock %}
+
+
+        {% block center_panel %}
+        {% endblock %}
+
+        {% block extras_panel%}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
+
+{% block script %} 
+{% endblock %}
+

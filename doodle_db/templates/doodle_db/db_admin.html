@@ -1,0 +1,96 @@
+{% extends "doodle_db/db_admin_layout.html" %}
+{%load static%}
+{% block center_panel %}
+
+    <section class="db-admin-wrapper">
+
+        <h1> DB Admin </h1>
+
+        <div class="main-center-stage">
+            <div class = "restart-wrapper">
+                <div class="db-button-row">
+
+                    <a href="{% url "doodle_db:inactive" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Reset To Basline</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="db-button-row">  
+
+                    <a href="{% url "doodle_db:insert_users" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Users</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url "doodle_db:reset_su" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Reset SU</span>
+
+                        </div>
+                    </a>
+
+                    <a href="{% url "doodle_db:inactive" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Inactive</span>
+                        </div>
+                    </a>    
+
+                    <a href="{% url "doodle_db:insert_static" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Static</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url "doodle_db:delete_static" %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Delete Static</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="db-button-row">
+                    <a href="{% url "doodle_db:delete_users" %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Delete Users</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url "doodle_db:inactive" %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Inactive</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url "doodle_db:inactive" %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Inactive</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="db-button-row">
+                    <div class="footer">{{message}}</div>
+                </div>
+            </div>
+
+        </div>
+    
+    </section>
+    
+ 
+    
+
+
+{% endblock %}
